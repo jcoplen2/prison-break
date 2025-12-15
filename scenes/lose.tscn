@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cu4sibori322r"]
+
+[node name="lose" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 652.0
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 226.0
+offset_right = 581.0
+offset_bottom = 249.0
+text = "You lose!"
+
+[node name="TryAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 569.0
+offset_top = 445.0
+offset_right = 646.0
+offset_bottom = 476.0
+text = "try again"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0p5ku565ung5"]
+
+[node name="Inmate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="KeyChat" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pssst. heres a key card...."
