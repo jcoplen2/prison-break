@@ -96,10 +96,10 @@ position = Vector2(463, 536)
 position = Vector2(423, 311)
 
 [node name="Dog" parent="." instance=ExtResource("3_2r41h")]
-position = Vector2(557, 75)
+position = Vector2(884, 357)
 
 [node name="Inmate" parent="." instance=ExtResource("4_klq6b")]
-position = Vector2(1029, 50)
+position = Vector2(117, 371)
 
 [node name="Exit" type="Area2D" parent="."]
 
@@ -107,5 +107,4 @@ position = Vector2(1029, 50)
 position = Vector2(559, 134)
 shape = SubResource("RectangleShape2D_8c41q")
 
-[connection signal="caught" from="Player" to="." method="_on_player_caught"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://bjlipdiyh2cdt"]
+[gd_scene load_steps=2 format=3 uid="uid://bjlipdiyh2cdt"]
+
+[ext_resource type="Script" uid="uid://byiqqd8we7021" path="res://scenes/intro.gd" id="1_ioskq"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_ioskq")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -27,3 +30,5 @@ offset_top = 429.0
 offset_right = 580.0
 offset_bottom = 460.0
 text = "start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

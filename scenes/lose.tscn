@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://cu4sibori322r"]
+[gd_scene load_steps=2 format=3 uid="uid://cu4sibori322r"]
+
+[ext_resource type="Script" uid="uid://dxmveo5sda0y" path="res://scenes/lose.gd" id="1_vjdtf"]
 
 [node name="lose" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_vjdtf")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -27,3 +30,5 @@ offset_top = 445.0
 offset_right = 646.0
 offset_bottom = 476.0
 text = "try again"
+
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var speed := 200
 
-signal caught
-
 func _physics_process(delta):
 	var direction := Vector2.ZERO
 

@@ -1,11 +1,52 @@
-[gd_scene format=3 uid="uid://pfmt0wfiab4r"]
+[gd_scene load_steps=8 format=3 uid="uid://pfmt0wfiab4r"]
+
+[ext_resource type="Texture2D" uid="uid://1p011albhvhj" path="res://temp_art/map_tiles.png" id="1_on80e"]
+[ext_resource type="Script" uid="uid://bcm5kj5eartmb" path="res://scenes/dog.gd" id="1_vwjdu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwjdu"]
+atlas = ExtResource("1_on80e")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjqk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwjdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmowd"]
+size = Vector2(47, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpbal"]
+size = Vector2(414, 307.625)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwjdu"]
+radius = 36.0
 
 [node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_vwjdu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qjqk5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_gmowd")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="detection" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_tpbal")
+
+[node name="catch" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="catch"]
+shape = SubResource("CircleShape2D_vwjdu")
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_entered" from="catch" to="." method="_on_catch_body_entered"]
